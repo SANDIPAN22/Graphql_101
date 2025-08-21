@@ -2,15 +2,26 @@ export const schema = `#graphql
 
 type Query {
     testing: String
-    getUsers: [User]
+    getCustomers: [Customer],
+    getAccounts: [Account]
 }
 
-type User {
+type Customer {
     _id: ID!
-    name: String!
-    email: String!
-    password: String
-    
+    name: String,
+    email: String,
+    username: String,
+    address: String,
+    active: Boolean,
+    accounts: [Int]
+
+}
+
+type Account {
+    _id: ID!
+    account_id: Int,
+    limit: Int,
+    products: [String]
 }
 
 
