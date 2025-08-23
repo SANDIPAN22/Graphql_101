@@ -6,6 +6,6 @@ export const getCustomersLogic = async () =>{
 }
 
 export const getCustomerLogic = async (_:any, arg:{id: String}) =>{
-    const data = await Customers.findById(arg.id).populate({path: "accounts", model: "accounts", foreignField: "account_id"})
+    const data = await Customers.findById(arg.id)
     return data
 }
