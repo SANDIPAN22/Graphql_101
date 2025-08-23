@@ -3,7 +3,8 @@ export const schema = `#graphql
 type Query {
     testing: String
     getCustomers: [Customer],
-    getAccounts: [Account]
+    getAccounts: [Account],
+    getCustomer(id: ID!): Customer
 }
 
 type Customer {
