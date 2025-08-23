@@ -5,7 +5,10 @@ const customersSchema = new mongoose.Schema({
     username: {type: String},
     address: {type: String},
     active: {type: Boolean},
-    accounts: [Number],
+    accounts: [{
+        type: Number,
+        ref: "accounts"
+    }],
 })
 
 const accountsSchema = new mongoose.Schema({

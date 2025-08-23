@@ -14,7 +14,7 @@ type Customer {
     username: String,
     address: String,
     active: Boolean,
-    accounts: [Int]
+    accounts: [Account]
 
 }
 
