@@ -2,7 +2,7 @@ import { ApolloServer } from "@apollo/server";
 import {startStandaloneServer} from "@apollo/server/standalone"
 import { schema } from "./graphql/schema";
 import { connectDb } from "./database/database";
-import { getCustomersLogic, getCustomerLogic } from "./controllers/customers";
+import { getCustomersLogic, getCustomerLogic, addCustomerLogic } from "./controllers/customers";
 import { getAccountsLogic, getAccountsByIdsLogic } from "./controllers/accounts";
 
 connectDb()
@@ -10,6 +10,9 @@ connectDb()
 const server = new ApolloServer({
     typeDefs: schema,
     resolvers: {
+        Mutation: {
+            addCustomer: addCustomerLogic
+        },
         Query:{
            
             testing: ()=>"Testing",

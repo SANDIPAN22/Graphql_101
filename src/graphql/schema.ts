@@ -1,10 +1,20 @@
 export const schema = `#graphql 
 
+type Mutation {
+    addCustomer(data: NewCustomer): String
+}
+
 type Query {
     testing: String
     getCustomers: [Customer],
     getAccounts: [Account],
     getCustomer(id: ID!): Customer
+}
+
+input NewCustomer {
+    name: String!,
+    email: String!,
+    username: String!,
 }
 
 type Customer {
