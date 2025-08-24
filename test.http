@@ -1,0 +1,32 @@
+# POST http://localhost:4000/
+# content-type: application/json
+
+# {
+#     "query": "query GetCustomers {getCustomers {name}}"
+# }
+
+
+# POST http://localhost:4000/
+# content-type: application/json
+
+# {
+#     "query": "query GetCustomer($getCustomerId: ID!) {getCustomer(id: $getCustomerId) {name}}",
+#     "variables": {
+#         "getCustomerId": "5ca4bbcea2dd94ee58162a68"
+#     }
+# }
+
+
+POST http://localhost:4000/
+content-type: application/json
+
+{
+    "query": "mutation Mutation($data: NewCustomer) {addCustomer(data: $data)}",
+    "variables": {
+         "data": {
+                "username": "test22",
+                "name": "test22",
+                "email": "test22"
+                }
+    }
+}
